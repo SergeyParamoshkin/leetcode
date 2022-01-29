@@ -1,9 +1,10 @@
 package threesum_test
 
 import (
-	"leetcode/threesum"
 	"reflect"
 	"testing"
+
+	"github.com/SergeyParamoshkin/leetcode/threesum"
 
 	"github.com/stretchr/testify/assert"
 )

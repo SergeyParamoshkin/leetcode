@@ -3,7 +3,7 @@ package palindromic_test
 import (
 	"testing"
 
-	"leetcode/palindromic"
+	palindromic "github.com/SergeyParamoshkin/leetcode/find-first-palindromic-string-in-the-array"
 
 	"github.com/stretchr/testify/assert"
 )

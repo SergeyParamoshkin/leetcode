@@ -1,8 +1,9 @@
 package twosum_test
 
 import (
-	"leetcode/twosum"
 	"testing"
+
+	"github.com/SergeyParamoshkin/leetcode/twosum"
 
 	"github.com/stretchr/testify/assert"
 )

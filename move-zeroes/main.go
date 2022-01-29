@@ -1,5 +1,5 @@
-package main
+package movezeroes
 
-func moveZeroes(nums []int) {
+func MoveZeroes(nums []int) {
 
 }
