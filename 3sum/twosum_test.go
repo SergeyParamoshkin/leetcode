@@ -2,35 +2,38 @@ package threesum_test
 
 import (
 	"leetcode/threesum"
+	"reflect"
 	"testing"
 
 	"github.com/stretchr/testify/assert"
 )
 
 func TestThreeSum(t *testing.T) {
-
-	type Test struct {
-		Name string
-		In   []int
-		Want [][]int
+	type args struct {
+		nums []int
 	}
-	testCases := []Test{
+	tests := []struct {
+		name string
+		args args
+		want [][]int
+	}{
 		{
-			Name: "zero case",
-			In:   []int{0, 0, 0, 0},
-			Want: [][]int{{0, 0, 0}},
+			name: "zero case",
+			args: args{[]int{0, 0, 0, 0}},
+			want: [][]int{{0, 0, 0}},
 		},
 		{
-			Name: "ok",
-			In:   []int{-1, 0, 1, 2, -1, -4},
-			Want: [][]int{{-1, -1, 2}, {-1, 0, 1}},
+			name: "ok",
+			args: args{[]int{-1, 0, 1, 2, -1, -4}},
+			want: [][]int{{-1, -1, 2}, {-1, 0, 1}},
 		},
 	}
-
-	for _, tc := range testCases {
-		t.Run(tc.Name, func(t *testing.T) {
-			t.Parallel()
-			assert.Equal(t, tc.Want, threesum.ThreeSum(tc.In))
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			if got := threesum.ThreeSum(tt.args.nums); !reflect.DeepEqual(got, tt.want) {
+				// t.Errorf("ThreeSum() = %v, want %v", got, tt.want)
+				assert.Equal(t, tt.want, threesum.ThreeSum(tt.args.nums))
+			}
 		})
 	}
 }
