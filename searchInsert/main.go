@@ -13,6 +13,9 @@ func searchInsert(nums []int, target int) int {
 			left = pivot + 1
 		}
 	}
+	if nums[pivot] > target {
+		return pivot
+	}
 
-	return right
+	return right + 1
 }
