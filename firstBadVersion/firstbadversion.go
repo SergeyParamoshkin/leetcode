@@ -1,4 +1,4 @@
-package main
+package firstbadversion
 
 /**
  * Forward declaration of isBadVersion API.
@@ -7,6 +7,10 @@ package main
  *			          false if current version is good
  * func isBadVersion(version int) bool;
  */
+
+func isBadVersion(version int) bool {
+	return true
+}
 
 func firstBadVersion(n int) int {
 	left, right := 1, n
@@ -20,8 +24,4 @@ func firstBadVersion(n int) int {
 	}
 
 	return left
-}
-
-func main() {
-
 }

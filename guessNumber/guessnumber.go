@@ -1,4 +1,4 @@
-package main
+package guessnumber
 
 /**
  * Forward declaration of guess API.
@@ -8,6 +8,17 @@ package main
  *               otherwise return 0
  * func guess(num int) int;
  */
+
+func guess(num int) int {
+	const a = 10
+	if a < num {
+		return 1
+	} else {
+		return -1
+	}
+
+	return 0
+}
 
 func guessNumber(n int) int {
 	left, right := 1, n
@@ -22,7 +33,6 @@ func guessNumber(n int) int {
 		} else {
 			right = mid - 1
 		}
-
 	}
 
 	return 0
