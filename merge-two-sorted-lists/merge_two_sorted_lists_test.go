@@ -31,7 +31,13 @@ func Test_mergeTwoLists(t *testing.T) {
 						Next: &ListNode{Val: 3,
 							Next: &ListNode{Val: 4,
 								Next: &ListNode{Val: 4}}}}}}},
-	}
+		{
+			name: "[]_[0]",
+			args: args{
+				list1: &ListNode{},
+				list2: &ListNode{Val: 0}},
+			want: &ListNode{Val: 0, Next: &ListNode{}},
+		}}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
 			if got := mergeTwoLists(tt.args.list1, tt.args.list2); !reflect.DeepEqual(got, tt.want) {
