@@ -13,10 +13,9 @@ type ListNode struct {
 	Next *ListNode
 }
 
-func reverseList(head *ListNode) *ListNode {
-	t := head.Val
-	head.Val = head.Next.Val
-	head.Next.Val = t
+func ReverseList(head *ListNode) *ListNode {
+	head.Val, head.Next.Val = head.Next.Val, head.Val
 
-	return reverseList(head.Next)
+	return &ListNode{head.Val, head.Next}
+	// return ReverseList(head.Next)
 }

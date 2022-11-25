@@ -1,8 +1,9 @@
-package palindromic
+package palindromic_test
 
 import (
 	"testing"
 
+	palindromic "github.com/SergeyParamoshkin/leetcode/find-first-palindromic-string-in-the-array"
 	"github.com/stretchr/testify/assert"
 )
 
@@ -26,7 +27,7 @@ func TestFirstPalindrome(t *testing.T) {
 
 	if !assert.Equal(t,
 		"ujvoejixvaioikkwzxgtmkchckrigfejjpheiiehpjjefgirkchckmtgxzwkkioiavxijeovju",
-		FirstPalindrome(words)) {
+		palindromic.FirstPalindrome(words)) {
 		t.Fail()
 	}
 }
@@ -48,6 +49,6 @@ func BenchmarkFirstPalindrome10000(b *testing.B) {
 	}
 
 	for i := 0; i < b.N; i++ {
-		_ = FirstPalindrome(words)
+		_ = palindromic.FirstPalindrome(words)
 	}
 }

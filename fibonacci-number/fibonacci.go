@@ -1,10 +1,14 @@
 package fibonacci
 
-func fib(n int) int {
+func Fib(number int) int {
+	const (
+		first  = 1
+		second = 2
+	)
 
-	if n < 2 {
-		return n
+	if number < second {
+		return number
 	}
 
-	return fib(n-1) + fib(n-2)
+	return Fib(number-first) + Fib(number-second)
 }

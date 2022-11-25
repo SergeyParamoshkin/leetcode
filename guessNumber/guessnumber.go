@@ -13,22 +13,25 @@ func guess(num int) int {
 	const a = 10
 	if a < num {
 		return 1
-	} else {
-		return -1
 	}
 
-	return 0
+	return -1
 }
 
-func guessNumber(n int) int {
+func GuessNumber(n int) int {
+	const delimiter = 2
+
 	left, right := 1, n
 	for left <= right {
-		mid := left + (right-left)/2
-		g := guess(mid)
-		if g == 0 {
+		mid := left + (right-left)/delimiter
+
+		gst := guess(mid)
+
+		if gst == 0 {
 			return mid
 		}
-		if g == 1 {
+
+		if gst == 1 {
 			left = mid + 1
 		} else {
 			right = mid - 1

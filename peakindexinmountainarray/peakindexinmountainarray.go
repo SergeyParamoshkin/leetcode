@@ -1,6 +1,6 @@
-package main
+package peakindexinmountainarray
 
-func peakIndexInMountainArray(arr []int) int {
+func PeakIndexInMountainArray(arr []int) int {
 	left, right := 0, len(arr)
 	for left < right {
 		mid := left + (right-left)/2
@@ -13,5 +13,4 @@ func peakIndexInMountainArray(arr []int) int {
 
 	return left
 
-	return 0
 }

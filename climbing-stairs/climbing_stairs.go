@@ -1,5 +1,5 @@
 package climbingstairs
 
-func climbStairs(n int) int {
-	return 0
+func ClimbStairs(n int) int {
+	return n
 }
