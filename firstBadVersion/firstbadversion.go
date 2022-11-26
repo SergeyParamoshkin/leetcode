@@ -12,7 +12,7 @@ func isBadVersion(version int) bool {
 	return true
 }
 
-func firstBadVersion(n int) int {
+func FirstBadVersion(n int) int {
 	left, right := 1, n
 	for left < right {
 		mid := left + (right-left)/2

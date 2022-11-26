@@ -5,20 +5,25 @@ type ListNode struct {
 	Next *ListNode
 }
 
-func addTwoNumbers(l1 *ListNode, l2 *ListNode) *ListNode {
-	l, sum := new(ListNode), 0
-	for cur := l; l1 != nil || l2 != nil || sum != 0; cur = cur.Next {
-		if l1 != nil {
-			sum += l1.Val
-			l1 = l1.Next
+func AddTwoNumbers(list1 *ListNode, list2 *ListNode) *ListNode {
+	const delimiter = 10
+
+	list, sum := new(ListNode), 0
+
+	for cur := list; list1 != nil || list2 != nil || sum != 0; cur = cur.Next {
+		if list1 != nil {
+			sum += list1.Val
+			list1 = list1.Next
 		}
-		if l2 != nil {
-			sum += l2.Val
-			l2 = l2.Next
+
+		if list2 != nil {
+			sum += list2.Val
+			list2 = list2.Next
 		}
-		cur.Next = &ListNode{Val: sum % 10}
+
+		cur.Next = &ListNode{Val: sum % delimiter, Next: nil}
 		sum /= 10
 	}
 
-	return l.Next
+	return list.Next
 }

@@ -13,8 +13,8 @@ type ListNode struct {
 	Next *ListNode
 }
 
-func mergeTwoLists(list1 *ListNode, list2 *ListNode) *ListNode {
-	tempNode := &ListNode{}
+func MergeTwoLists(list1 *ListNode, list2 *ListNode) *ListNode {
+	tempNode := &ListNode{Val: 0, Next: nil}
 	currentNode := tempNode
 
 	for list1 != nil && list2 != nil {
@@ -28,13 +28,15 @@ func mergeTwoLists(list1 *ListNode, list2 *ListNode) *ListNode {
 
 		currentNode = currentNode.Next
 	}
+
 	if list1 != nil {
 		currentNode.Next = list1
-		list1 = list1.Next
+		list1 = list1.Next //nolint:all
 	}
+
 	if list2 != nil {
 		currentNode.Next = list2
-		list2 = list2.Next
+		list2 = list2.Next //nolint:all
 	}
 
 	return tempNode.Next
