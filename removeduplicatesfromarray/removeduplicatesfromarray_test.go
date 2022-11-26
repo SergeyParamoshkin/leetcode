@@ -18,7 +18,7 @@ func TestRemoveDuplicates(t *testing.T) {
 		args args
 		want int
 	}{
-		// {name: "okok", args: args{nums: []int{1, 1, 2}}, want: 2},
+		{name: "okok", args: args{nums: []int{1, 1, 2}}, want: 2},
 		{name: "okok", args: args{nums: []int{0, 0, 1, 1, 1, 2, 2, 3, 3, 4}}, want: 5},
 	}
 	for _, tt := range tests {
