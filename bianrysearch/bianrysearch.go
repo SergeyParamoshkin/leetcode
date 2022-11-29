@@ -1,10 +1,10 @@
 package bianrysearch
 
-func Search(nums []int64, target int64) int64 {
+func Search(nums []int, target int) int {
 	const delimiter = 2
 
-	left := int64(0)
-	right := int64(len(nums) - 1)
+	left := 0
+	right := len(nums) - 1
 
 	for left <= right {
 		pivot := left + (right-left)/delimiter

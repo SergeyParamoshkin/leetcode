@@ -10,19 +10,19 @@ func TestSearch(t *testing.T) {
 	t.Parallel()
 
 	type args struct {
-		nums   []int64
-		target int64
+		nums   []int
+		target int
 	}
 
 	tests := []struct {
 		name string
 		args args
-		want int64
+		want int
 	}{
 		{
 			name: "okok",
 			args: args{
-				nums:   []int64{-1, 0, 3, 5, 9, 12},
+				nums:   []int{-1, 0, 3, 5, 9, 12},
 				target: 9,
 			},
 			want: 4,
