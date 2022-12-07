@@ -18,7 +18,8 @@ func TestIsPerfectSquare(t *testing.T) {
 		args args
 		want bool
 	}{
-		// {name: "okok", args: args{num: 16}, want: true},
+		{name: "okok", args: args{num: 1}, want: true},
+		{name: "okok", args: args{num: 16}, want: true},
 		{name: "okok", args: args{num: 14}, want: false},
 	}
 	for _, tt := range tests {
