@@ -21,3 +21,17 @@ func Search(nums []int, target int) int {
 
 	return -1
 }
+
+func Search2(nums []int, target int) int {
+	left, right := -1, len(nums)
+	for right > left+1 {
+		m := (left + right) / 2
+		if nums[m] >= target {
+			right = m
+		} else {
+			left = m
+		}
+	}
+
+	return right
+}

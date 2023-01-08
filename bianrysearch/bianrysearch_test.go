@@ -58,3 +58,30 @@ func TestSearch(t *testing.T) {
 // 		assert.Equal(t, expect, bianrysearch.Search(nums, expect))
 // 	})
 // }
+
+func TestSearch2(t *testing.T) {
+	t.Parallel()
+
+	type args struct {
+		nums   []int
+		target int
+	}
+
+	tests := []struct {
+		name string
+		args args
+		want int
+	}{
+		{name: "test", args: args{nums: []int{-1, 0, 3, 5, 9, 12}, target: 9}, want: 4},
+	}
+
+	for _, tt := range tests {
+		tt := tt
+		t.Run(tt.name, func(t *testing.T) {
+			t.Parallel()
+			if got := bianrysearch.Search2(tt.args.nums, tt.args.target); got != tt.want {
+				t.Errorf("Search2() = %v, want %v", got, tt.want)
+			}
+		})
+	}
+}

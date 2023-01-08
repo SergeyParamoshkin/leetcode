@@ -4,7 +4,7 @@ import "sort"
 
 func CheckIfExist(arr []int) bool {
 	sort.Ints(arr)
-	l, r := 0, len(arr)-1
+	l, r := 0, 1
 
 	for r > l {
 		d := arr[l] * 2
@@ -22,16 +22,14 @@ func CheckIfExist(arr []int) bool {
 
 func lower_bound(v []int, l int, t int) int {
 	r := len(v)
-	for l <= r {
-		m := l + (r-l)/2
-		if v[m] < t {
-			l = m
-		} else if v[m] == t {
-			return m
-		} else {
-			r = m
-		}
-	}
+	// for r > l-1 {
+	// 	m := (l + r) / 2
+	// 	if v[m] > t {
+	// 		r = m
+	// 	} else {
+	// 		l = m
+	// 	}
+	// }
 
-	return l
+	return r
 }
